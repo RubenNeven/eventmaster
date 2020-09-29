@@ -23,6 +23,8 @@ public class Event {
     private String name;
     @Column(name = "price")
     private BigDecimal price;
+    @Column(name = "location")
+    private String location;
     @Column(name = "date_from")
     private LocalDateTime dateFrom;
     @Column(name = "date_until")

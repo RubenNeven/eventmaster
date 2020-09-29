@@ -16,6 +16,7 @@ public class EventMapper {
                 .id(eventDto.getId())
                 .name(eventDto.getName())
                 .price(eventDto.getPrice())
+                .location(eventDto.getLocation())
                 .dateFrom(eventDto.getDateFrom())
                 .dateUntil(eventDto.getDateUntil())
                 .build();
@@ -26,6 +27,7 @@ public class EventMapper {
                 .id(event.getId())
                 .name(event.getName())
                 .price(event.getPrice())
+                .location(event.getLocation())
                 .dateFrom(event.getDateFrom())
                 .dateUntil(event.getDateUntil())
                 .build();
