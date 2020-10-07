@@ -19,7 +19,7 @@ public class CategoryMapper {
 
     public CategoryDtoList convertToCategoryDtoList(List<Category> categories){
         return CategoryDtoList.builder()
-                .categoryList(categories.stream().map(this::map).collect(Collectors.toList()))
+                .categories(categories.stream().map(this::map).collect(Collectors.toList()))
                 .build();
     }
 }
