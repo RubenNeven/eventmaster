@@ -1,6 +1,8 @@
 package com.eventmaster.backend.service.event;
 
+import com.eventmaster.backend.entity.event.Category;
 import com.eventmaster.backend.entity.event.Event;
+import com.eventmaster.backend.repository.event.CategoryRepository;
 import com.eventmaster.backend.repository.event.EventRepository;
 import org.springframework.stereotype.Service;
 
@@ -10,15 +12,19 @@ import java.util.List;
 public class EventServiceImpl implements EventService {
 
     private final EventRepository eventRepository;
+    private final CategoryRepository categoryRepository;
 
-    public EventServiceImpl(EventRepository eventRepository) {
+    public EventServiceImpl(EventRepository eventRepository, CategoryRepository categoryRepository) {
         this.eventRepository = eventRepository;
+        this.categoryRepository = categoryRepository;
     }
 
     @Override
     public List<Event> findAllEvents() {
         return eventRepository.findAll();
     }
+
+
 
     @Override
     public Event findEventById(Long id) {
@@ -35,5 +41,17 @@ public class EventServiceImpl implements EventService {
     @Override
     public void deleteEvent(Long id) {
         eventRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Category> findAllCategories() {
+        return categoryRepository.findAll();
+    }
+
+    @Override
+    public Category findCategoryById(Long id) {
+        return categoryRepository
+                .findById(id)
+                .orElseThrow();
     }
 }

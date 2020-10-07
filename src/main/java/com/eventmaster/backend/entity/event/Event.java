@@ -29,4 +29,7 @@ public class Event {
     private LocalDateTime dateFrom;
     @Column(name = "date_until")
     private LocalDateTime dateUntil;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 }

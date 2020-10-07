@@ -20,4 +20,5 @@ public class EventDto {
     private String location;
     private LocalDateTime dateFrom;
     private LocalDateTime dateUntil;
+    private CategoryDto category;
 }
